@@ -5,6 +5,8 @@
 -------------------------------------------------------*/
 #include <stdio.h>
 
+#define DAYS_IN_YEAR 365
+#define MONTHS_IN_YEAR 12
 /*------------------------------------------------------
 * Function Name - [main]
 *
@@ -39,12 +41,12 @@ int main() {
   printf("Enter Gary's Birthday:\n");
   scanf("%d/%d/%d", &birthday_days, &birthday_months, &birthday_years);
 
-  current_date_days_sum = current_date_days + current_date_months*30 + current_date_years*365;
-  birthday_days_sum = birthday_days + birthday_months*30 + birthday_years*365;
+  current_date_days_sum = current_date_days + current_date_months*MONTHS_IN_YEAR + current_date_years*DAYS_IN_YEAR;
+  birthday_days_sum = birthday_days + birthday_months*MONTHS_IN_YEAR + birthday_years*DAYS_IN_YEAR;
 
   days_difference = current_date_days_sum - birthday_days_sum;
-  age_in_months = (float)days_difference / 30.0;
-  age_in_years = (float)days_difference / 365.0;
+  age_in_months = (float)days_difference / MONTHS_IN_YEAR;
+  age_in_years = (float)days_difference / DAYS_IN_YEAR;
 
   printf("Gary's age in days %d\n", days_difference);
   printf("Gary's age in months %.6f\n", age_in_months);
