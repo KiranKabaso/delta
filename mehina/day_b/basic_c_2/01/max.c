@@ -20,7 +20,7 @@
 int main() {
     int x = 5;
     int y = 7;
-    int z = x > y ? x:y;
+    int z = (y>x)*y + (x>y)*x;
     printf("z = %d", z);
 
     return 0;
