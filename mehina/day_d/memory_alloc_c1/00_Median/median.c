@@ -1,6 +1,6 @@
 /*------------------------------------------------------
 * Filename: [median.c]
-* Description: [Brief description of the program here]
+* Description: [get an input array from the user and print its median]
 * Author: [Kiran Kabaso]
 -------------------------------------------------------*/
 #define ZERO_CHAR_VALUE_ASCII 48
@@ -10,7 +10,7 @@
 /*------------------------------------------------------
 * Function Name - [main]
 *
-* Function Purpose - [demonstrates proper documentation]
+* Function Purpose - [get an input array from the user and print its median]
 *
 * Parameters – NONE
 *
@@ -20,6 +20,11 @@
 -------------------------------------------------------*/
 int main() {
   array_struct numbers_array = get_input_array();
+
+  if (numbers_array.array_ptr == NULL){
+    printf("alloc fail");
+    return 1;
+  }
 
   if (!numbers_array.size){ //if there are no elements
     printf("no numbers were inputted\n");
