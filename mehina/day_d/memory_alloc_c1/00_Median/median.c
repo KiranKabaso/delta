@@ -7,6 +7,7 @@
 
 #include "get_input_array.h"
 #include <stdio.h>
+#include <stdlib.h>
 /*------------------------------------------------------
 * Function Name - [main]
 *
@@ -50,6 +51,8 @@ int main() {
   }else{ //odd
     printf("the median is the %d'th element: %d", numbers_array.size/2 + 1, numbers_array.array_ptr[numbers_array.size/2]);
   }
+
+  free(numbers_array.array_ptr);
 
   return 0;
 }
