@@ -26,7 +26,7 @@ char* dynamic_scanf(){
 
   do {
     input_char = getchar();
-    if (input_char != NEW_LINE){
+    if (input_char != NEW_LINE && input_char != EOF){
       if (count_array_members == current_array_size){//increase array size if needed
         //allocate a new array with more memory.
         char* current_array_ptr_tmp = (char*)malloc(sizeof(char)*current_array_size*2);
@@ -47,7 +47,7 @@ char* dynamic_scanf(){
     }
 
 
-  } while(input_char != NEW_LINE); //condition
+  } while(input_char != NEW_LINE && input_char != EOF); //condition
 
   //return the array without the extra spaces for more members.
   //construct a new array without the extra spaces. add 1 space for '\0'.
